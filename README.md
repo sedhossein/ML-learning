@@ -1,7 +1,9 @@
+This Repo is about learning ML for Lexicon-Based Sentiment Analysis in the Social Web.
+
 ## tools:
 - use STUDIO3R GUI for mongo
-- use injected package for crawling
-
+- use injected package in `./Tests` for crawling
+- imdb data set : `http://ai.stanford.edu/~amaas/data/sentiment/` 
 ---
 
 # TODO:
@@ -9,6 +11,7 @@
 ## questions:
 - text mining vs text analisys vs  text proccesing
 - https://blog.bitext.com/what-is-the-difference-between-stemming-and-lemmatization/
+- unsupervised vs supervised learning
 
 ## conecpts
 - algorythms for: text mining, text analitycs, topic detection, text proccesing
@@ -17,6 +20,7 @@
 - ‘Naive Bayes’
 - ‘Support Vector Machines’ 
 - bios and variance tradeoff
+- Linear reression (aka least squares)
 
 
 ## packages:
