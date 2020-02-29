@@ -24,7 +24,8 @@ for f in ('test', 'train'):
     for l in ('pos', 'neg'):
         path = os.path.join(folder, f, l)
         for idx, file in enumerate(os.listdir(os.getcwd() + "/" + path)):
-            with open(os.path.join(path, file), 'r+',  encoding='utf-8') as infile:  # , encoding='utf-8'
+            with open(os.path.join(path, file), 'r+',
+                      encoding='utf-8') as infile:  # encoding='utf-8' just work in python3
                 txt = infile.read()
 
             df = df.append([{
@@ -32,19 +33,16 @@ for f in ('test', 'train'):
                 'sentiment': labels[l],
             }], ignore_index=True)
 
-            # if idx > 30:
-            #     break
-
+# TODO: uncomment if you need
 # save the assembled data as .csv file for further use.
 # df.to_csv('movie_data.csv', index=False, encoding='utf-8')
 # df.head()
-
 
 # frequency distribution of the words in the text
 reviews = df.review.str.cat(sep=' ')  # function to split text into word
 tokens = word_tokenize(reviews)
 vocabulary = set(tokens)
-print(len(vocabulary))
+print("number of vocabulary:" + str(len(vocabulary)))
 
 # remove the stop words to further cleanup the text corpus.
 stop_words = set(stopwords.words('english'))
