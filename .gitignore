@@ -1,5 +1,6 @@
-aclImdb_v1.tar.gz
-./aclImdb_v1.tar.gz
-
-.vscode
-./.vscode
+./DataSet/*
+./DataSet
+DataSet
+./.idea/*
+./.idea
+.idea

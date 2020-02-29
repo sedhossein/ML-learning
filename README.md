@@ -53,14 +53,17 @@ The mapping from textual data to real valued vectors is called feature extractio
  - Inverse Document Frequency (IDF) = log(N/n), where, N is the number of documents and n is the number of documents a term t has appeared in. The IDF of a rare word is high, whereas the IDF of a frequent word is likely to be low. Thus having the effect of highlighting words that are distinct.
  - We calculate TF-IDF value of a term as = TF * IDF
 
-One of the major disadvantages of using BOW is that it discards word order thereby ignoring the context and in turn meaning of words in the document. For natural language processing (NLP) maintaining the context of the words is of utmost importance. To solve this problem we use another approach called Word Embedding.
+####### One of the major disadvantages of using BOW is that it discards word order thereby ignoring the context and in turn meaning of words in the document. For natural language processing (NLP) maintaining the context of the words is of utmost importance. To solve this problem we use another approach called Word Embedding.
 
-Word Embedding: It is a representation of text where words that have the same meaning have a similar representation. In other words it represents words in a coordinate system where related words, based on a corpus of relationships, are placed closer together.
+#### Word Embedding:
+It is a representation of text where words that have the same meaning have a similar representation. In other words it represents words in a coordinate system where related words, based on a corpus of relationships, are placed closer together.
 
-**Word2Vec** <br>
+**some of the well known models of word embedding**:
+
+- **Word2Vec** <br>
     Word2vec takes as its input a large corpus of text and produces a vector space with each unique word being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space. Word2Vec is very famous at capturing meaning and demonstrating it on tasks like calculating analogy questions of the form a is to b as c is to ?. For example, man is to woman as uncle is to ? (aunt) 
 
-**GloVe** <br>
+- **GloVe** <br>
     GloVe constructs an explicit word-context or word co-occurrence matrix using statistics across the whole text corpus. The result is a learning model that may result in generally better word embeddings.
 
 ### Step 3: Choosing ML Algorithms
@@ -70,3 +73,18 @@ Classical ML approaches like ‘Naive Bayes’ or ‘Support Vector Machines’ 
    
    
 reference : https://towardsdatascience.com/machine-learning-text-processing-1d5a2d638958    
+
+
+### Suggestions
+- can having more details like user words cloud
+- the cloud base image in configurable
+- prepare an open-source API to machine learning features based on twitter data.
+
+###TODO
+- [ ] consider persian stopwords
+- [ ] consider emojies to remove them from texts
+- [ ] consider and check and clean `stopwords_fa_additional.txt`
+- [ ] remove links and save them in another place
+- [ ] Removes mentions and save them in another place
+- [ ] choose having latin/persian phrases together or one on them
+- [ ] 
