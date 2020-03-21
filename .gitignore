@@ -4,6 +4,8 @@ DataSet
 ./.idea/*
 ./.idea
 .idea
+./.vscode
+.vscode
 ./Practices/imdb(Sentiment Analyzer)/acl/*
 ./Practices/imdb(Sentiment Analyzer)/acl
 Practices/imdb(Sentiment Analyzer)/acl
