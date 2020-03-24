@@ -8,7 +8,7 @@
 - Can work with minimal data
 - Can learn on noisily data
 - Its inspiration based on nature 
-
+- we doing learning curve/cycle based on threshold
 
 #### concepts
 - Neurons
@@ -52,3 +52,32 @@
 
 * we need pre-process before using these data + normalization
 
+---
+
+### evolutionary algorithms
+-  fitness function
+-  select between lot of solutions
+-  can process parallel
+-  not guaranty to find best solution
+-  using in social networks, ML, optimizations, automatic programming
+- types
+    - Genetic Algorithm(GA)
+        - phenotype
+        - genotype
+        - generate population
+        - with fitness function, check them. choose the best ones and make new population
+        - best Hypothesises choose directly, and some of them using after crossover and mutation to make new childes 
+            - crossover:
+                - single point(randomly point in parent)
+                - two point => mask: 0011111000
+                - uniform point => mask: 1010101100101
+             - mutation
+                - change the one random bit in parent
+        - work with bit strings
+        - search
+            - challenge: crowding -> solution: 1.ranking  2. fitness sharing
+        - schema: evaluation population
+        - 
+    - Genetic Programming(GP)
+
+###  
