@@ -79,5 +79,20 @@
         - schema: evaluation population
         - 
     - Genetic Programming(GP)
+        - memetic
+        - layered GP-LAGEP
+            - https://peaple.cs.nctu.edu.tw/~jylin/lagep/lagep.html
+        - usage:
+            - web mining
+            - social network analyze
+        
+        
 
-###  
+###  genetic
+- history: 
+    - Lamarck Theory
+    - Baldwin Theory
+- parallel:
+    - demes
+    - migration
+    
