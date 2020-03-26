@@ -1,0 +1,41 @@
+#### learning types
+- lazy 
+    - k-nearest neighbors
+    - case-based reasoning
+- eager
+    - concept learning
+    - decision tree
+    - ANN
+    
+    
+### IBL
+- find the nearest, or K-nearest neighbors (KNN)
+    - speedy
+    - easy learning
+    - no missing data
+    - bad time order in response
+    - too much memory
+    - voronoi diagram
+    - distance-weighted
+- lazy way
+- distance
+    - euclidean
+    - manhattan
+    - Ln-norm
+    - hamming
+- #### case-based reasoning(CBR)
+    - speedy
+    - no need to knowing all domain
+    - good for complex issues
+    - bold important features
+    - R4 cycle
+        - retrieve
+        - retain
+        - reuse
+        - revise
+     - tools:
+        - weka
+        - recall
+        - orenge
+        - kaidara
+        - remind
