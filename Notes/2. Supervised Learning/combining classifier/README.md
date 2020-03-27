@@ -1,0 +1,22 @@
+### Combining Classifier
+- We can combine the results in some learning based to hit more accuracy
+- Main idea is combining some determiner how the final result can be better 
+- Each learner know a special part of data and domain, so to combine the results together we get more details
+- static structures (Ensemble averaging, Boosting)
+    - Ensemble averaging:
+        - Plurality voting
+        - majority voting
+    - Homogeneous Ensembles
+        - Bagging
+        - Boosting
+            - weak/strong learners
+            - target is combining on collection weak learners
+            - implementations
+                - filtering
+                - sub-sampling
+                - re-weighting
+            - AdaBoost (ADAptive BOOSTing)
+                - increase wrong answer weights(sum of weak learners, make a strong learner)
+- Dynamic structures (Mixture of experts, Hierarchical mixture of experts)
+    - Mixtures of experts
+        - gating (softmax)
