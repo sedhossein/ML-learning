@@ -89,4 +89,23 @@ Minimum distance with maximum similarity can make groups/clusters.
     - COD(obstacles)
 
 
+### evaluating hypotheses
+- small dataset to learning, make a lot of Misery
+- sample error: we have this parameter in act
+- real error: we wanna to calculate this parameter
+- confidence interval: with sample error, can estimate the real error
+- expected value
+- variance
+- estimator -> estimate bios
+- confusion matrix
+    - (TP)True Positives:  Actual answer: YES, Algorithm said: YES
+    - (TN)True Negative:   Actual answer: NO,  Algorithm said: NO
+    - (FP)False Positives: Actual answer: NO,  Algorithm said: YES
+    - (FN)False Negative:  Actual answer: YES, Algorithm said: No
+    - Index evaluation
+        - Accuracy
+        - Error Rate
+        - Recall
+        - Precision
 
+- ROS: Receiver Operating Characteristic => AUC(Area Under Curve)
