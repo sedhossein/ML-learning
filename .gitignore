@@ -1,13 +1,4 @@
-./DataSet/*
-./DataSet
 DataSet
-./.idea/*
-./.idea
 .idea
-./.vscode
 .vscode
-./Practices/imdb(Sentiment Analyzer)/acl/*
-./Practices/imdb(Sentiment Analyzer)/acl
 Practices/imdb(Sentiment Analyzer)/acl
-./Practices/imdb(Sentiment Analyzer)/aclImdb_v1.tar.gz
-Practices/imdb(Sentiment Analyzer)/aclImdb_v1.tar.gz

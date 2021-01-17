@@ -46,3 +46,15 @@ Going to find frequent pattern in our data
 - Complexity ~ O(NMw) => Expensive since M = 2^d (M is the length of candidates)
 
 ### Apriori Algorithm
+(Input: DB, minsup)
+1. Initially, scan DB once to get frequent 1-itemset
+2. Set k=1
+3. Generate length (k+1) candidate itemsets from length k frequent itemsets
+4. Test the candidates against DB to get frequent (k+1)-itemsets
+5. k += 1
+6. Terminate when no frequent or candidate set can be generated
+![Apriori Algorithm – Example I - step 1](./images/2.png)
+![Apriori Algorithm – Example I - step 2](./images/3.png)
+![Apriori Algorithm – Example I - step 3](./images/4.png)
+
+
