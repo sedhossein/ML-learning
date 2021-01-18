@@ -70,7 +70,7 @@ prunning principle
 
 - C(k) : Candidate itemset of size k
 - L(k) : frequent itemset of size k
-![ How to Generate Candidates](./images/5.png)
+![How to Generate Candidates](./images/5.png)
 
 ### Methods to Improve Apriori’s Efficiency
 - <b>Sampling:</b>
@@ -86,4 +86,39 @@ Any itemset that is potentially frequent in DB must be frequent in at least one 
     - Vertical: words → document
 
 
-### Eclat Algorithm
+### Eclat Algorithm(Equivalence Class Transformation)
+Is similar to Apriori, but uses the vertical data format.
+![Eclat Algorythm - 1](./images/6.png)
+![Eclat Algorythm - 2](./images/7.png)
+
+Besides taking advantage of the Apriori property in the generation of candidate (k+1)-itemsets from frequent k-itemsets, there is no need to scan the database to find the supports of candidate (k+1)-itemsets. This is because the TID list of each k-itemset carries the complete information required for counting such supports.
+
+`to get more optimal try "Max-Itemsets" and "Closed Frequent Itemsets" methods`
+
+---
+
+### Association Rules
+An expression of the form X → Y, where X and Y are nonempty disjoint itemsets (X ≠ ∅, Y ≠ ∅, X ∩ Y = ∅)
+
+Given a set of transactions T, the goal of association rule mining is to find all strong rules having:
+- support ≥ minsup threshold
+    - Fraction of transactions that contain both A and B
+        - Support(A → B) = Support(A ∪ B) = Support(B → A)
+- confidence ≥ minconf threshold
+    - How often B appears in transactions that contain A
+        - Confidence(A → B) = Support (A ∪ B)/Support (A)
+
+`Support measures the coverage of the rule. Confidence measures the accuracy of the rule.`
+
+#### Association Rule Mining
+- Brute-force approach(impractical)
+    - List all possible association rules
+    - Compute the support and confidence for each rule
+    - Prune rules that fail the minsup and minconf thresholds
+- Use the frequent itemsets
+    - Generate all itemset with support ≥ minsup
+    - Generation high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset
+
+
+#### Lift
+Strong Rules are not necessarily interesting. We need more measures to evaluate rules.
