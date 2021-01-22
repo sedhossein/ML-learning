@@ -122,3 +122,183 @@ Given a set of transactions T, the goal of association rule mining is to find al
 
 #### Lift
 Strong Rules are not necessarily interesting. We need more measures to evaluate rules.
+
+![Eclat Algorythm - 2](./images/8.png)
+
+---
+## Classification and Regression
+
+- <b>Classification:</b> Predicts categorical class labels
+(discrete or nominal).
+    - Example: What is the weather
+status tomorrow (rainy, cloudy,
+sunny)?
+- <b>Regression:</b> Models continuous-valued
+functions.
+    - Example: What is the temperature
+going to be tomorrow?
+
+### Type of Classification
+
+1. Binary classification: 
+Classification tasks with only two classes, typically denoted by {+,−}, {+1,−1}, or {Pos, Neg}. Example: email spam detection, (pos/neg) sentiment analysis.
+
+2. Multiclass classification: 
+Classification tasks with more than two classes. Example: email topic detection, (pos/null/neg) sentiment analysis.
+
+### Classification algorithms
+- Decision tree
+- Bayesian methods (Naïve Bayes and Bayesian networks)
+- K-Nearest Neighbors (KNN)
+- Logistic regression
+- Support Vector Machines (SVM)
+- Artificial neural networks and Deep learning
+- Ensemble learning
+- And many more...
+
+
+#### Decision Tree
+There are many specific decision-tree algorithms, such as: 
+- ID3 (Iterative Dichotomiser 3)
+- C4.5 (successor of ID3)
+- CART (Classification And Regression Tree)
+- CHAID (CHi-squared Automatic Interaction Detector)
+- MARS (extends decision trees to handle numerical data better)
+
+`Basic algorithm adopted by ID3, C4.5 and CART is a greedy algorithm.`
+
+Tree is constructed in a top-down recursive divide-and-conquer manner:
+- At start, all the training tuples are at the root.
+- Attributes are selected on the basis of a heuristic or statistical
+measure (e.g., information gain).
+- Tuples are partitioned recursively based on selected attributes.
+- When an stopping condition is met, one leaf is constructed.
+    1. All samples for a given node belong to the same class.
+    2. There are no remaining attributes for further partitioning – majority voting is employed.
+    3. There are no samples left – majority voting on the parent’s samples is employed
+
+#### Attribute selection measures
+
+An attribute selection measure (splitting rule) is a heuristic for selecting the splitting criterion that “best” separates a given data partition D. Ideally
+- Each resulting partition would be pure (containing tuples that all belong to the
+same class).
+- Provide ranking for each attribute and the attribute with highest score is chosen.
+- It can also determine a split point for continuous-valued attributes or a splitting subset for binary trees.
+
+We’ll review Information Gain, Gain Ratio, and Gini Index.
+
+##### Information Gain
+Information entropy is a concept from information theory. It tells how much information there is in an event. In general, the more uncertain or random the event is, the more information it will contain.
+
+![Information Gain - 9](./images/9.png)
+
+We like #Low_Entropy
+
+- High Entropy
+    - is from a uniform like distribution (flat
+histogram)
+    - Values sampled from it are less predictable
+- Low Entropy
+    - X is from a varied distribution (histogram
+has many lows and highs)
+    - Values sampled from it are more predictable
+
+
+![Information Gain - 10](./images/10.png)
+```
+m: the number of classes
+pi: the probability that an arbitrary tuple in D belongs to class `Ci` estimated by:
+|Ci,D|/|D|(proportion of tuples of each class)
+```
+A log function to the base 2 is used because the information is encoded in bits
+
+![Information Gain - 11](./images/11.png)
+```
+- Suppose that we want to partition the tuples in D on some attribute A with
+values {A1,A2, ..., Av}
+- D is split into v partitions {D1, D2, ..., Dv}
+```
+|Dj|/|D|: the weight of the Jth partition.
+
+![Information Gain - 12](./images/12.png)
+
+`The attribute with the highest information gain is chosen as the splitting attribute.`
+
+
+#### Gain Ratio
+- Information gain measure is biased towards attributes with a large number of values.
+    - For example, it prefers features like student_number which is not a useful feature in classification at all.
+- C4.5 (a successor of ID3) uses gain ratio to overcome this problem (normalization of information gain).
+
+![Gain Ratio](./images/13.png)
+
+
+#### Gini Index
+- The Gini index is used in CART and measures the impurity of a dataset.
+
+- If a data set D contains examples from n classes, gini(D) is defined as:
+
+![Gini Index - 14](./images/14.png)
+
+`where Pj is the relative frequency of class j in D.`
+
+- If a data set D is split on A into two subsets D1 and D2 , the gini(A) D is defined as:
+
+![Gini Index - 15](./images/15.png)
+
+---
+This document missed bellow topic notes:
+- Pruning(pre-post)
+- Bayesian Method
+- K-Nearest Neighbors(KNN)
+- Logistic Regression
+- Support Vector Machine (SVM)
+- Ensemble Learning
+
+---
+
+### Evaluation
+- To compare different models.
+- To tune the hyperparameters such as K in KNN, number of layers in neural networks, the best pruning of a decision tree, etc.
+- The main goal of ML is generalization. We want to measure the generalization ability of our model.
+- Hold-out method: You train on the training data and evaluate your model on the validation data. Once your model is ready, you test it one final time on the test data.
+- Shuffle data before splitting.
+
+
+#### K-fold cross validation
+- When you have few data points, the validation set would end up being very small. This would prevent you from reliably evaluating your model. So, we use k-fold cross validation.
+- Typical values for k: 5, 10, N (leave-one-out method).
+![k-fold](./images/16.png)
+
+#### Confusion Matrix
+TP: True Positive
+TN: True Negative
+FP: False Positive (type I error)
+FN: False Negative (Type II error)
+![confusion matrix](./images/17.png)
+
+#### Accuracy
+percentage of tuples that are correctly classified
+
+`(TP + TN) / (TP + FP + TN + FN)`
+
+- Is it always a good measure?
+    - Consider a cancer detection system always predicts “no cancer”
+- Not a good measure for imbalanced data.
+
+
+
+#### Precision
+What percentage of tuples that the classifier labeled as positive are actually positive?
+
+![precision](./images/18.png)
+
+
+#### Recall:
+What percentage of positive tuples did the classifier label as positive?
+
+![precision](./images/19.png)
+
+
+The most popular way is by harmonic mean: F-measure
+![F-measure](./images/20.png)
